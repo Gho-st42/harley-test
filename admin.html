@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Harley Gaming Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switch">
+        <button id="lang-toggle" class="lang-btn">عربي</button>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="admin-login">
+        <div class="login-container">
+            <h1>HARLEY</h1>
+            <h2 data-key="admin-login">Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="admin-password" data-key="label-password">Password</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit" class="submit-btn" data-key="login">Login</button>
+            </form>
+            <div id="login-error" class="error-message" style="display: none;" data-key="login-error">Invalid password</div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="admin-panel" style="display: none;">
+        <nav class="admin-navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>HARLEY ADMIN</h1>
+                </div>
+                <div class="admin-actions">
+                    <button id="logout-btn" class="logout-btn" data-key="logout">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="admin-content">
+            <div class="container">
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="dashboard" data-key="dashboard">Dashboard</button>
+                    <button class="tab-btn" data-tab="bookings" data-key="bookings">Bookings</button>
+                    <button class="tab-btn" data-tab="orders" data-key="orders">Orders</button>
+                    <button class="tab-btn" data-tab="availability" data-key="manage-availability">Manage Availability</button>
+                </div>
+
+                <!-- Dashboard Tab -->
+                <div id="dashboard-tab" class="tab-content active">
+                    <h2 data-key="dashboard">Dashboard</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="total-bookings">0</div>
+                                <div class="stat-label" data-key="total-bookings">Total Bookings</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🍕</div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="total-orders">0</div>
+                                <div class="stat-label" data-key="total-orders">Total Orders</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="total-revenue">0</div>
+                                <div class="stat-label" data-key="total-revenue">Total Revenue</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎮</div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="active-rooms">0</div>
+                                <div class="stat-label" data-key="active-rooms">Active Rooms</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-actions">
+                        <button id="refresh-data" class="action-btn primary" data-key="refresh-data">Refresh Data</button>
+                        <button id="export-data" class="action-btn secondary" data-key="export-data">Export Data</button>
+                    </div>
+                </div>
+
+                <!-- Bookings Tab -->
+                <div id="bookings-tab" class="tab-content">
+                    <h2 data-key="bookings">Room Bookings</h2>
+                    <div class="data-controls">
+                        <div class="filter-controls">
+                            <select id="booking-filter">
+                                <option value="all" data-key="all-bookings">All Bookings</option>
+                                <option value="today" data-key="today">Today</option>
+                                <option value="upcoming" data-key="upcoming">Upcoming</option>
+                                <option value="past" data-key="past">Past</option>
+                            </select>
+                        </div>
+                        <button id="refresh-bookings" class="refresh-btn" data-key="refresh">Refresh</button>
+                    </div>
+                    <div class="data-table">
+                        <table id="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th data-key="table-date">Date</th>
+                                    <th data-key="table-time">Time</th>
+                                    <th data-key="table-customer">Customer</th>
+                                    <th data-key="table-phone">Phone</th>
+                                    <th data-key="table-room">Room</th>
+                                    <th data-key="table-duration">Duration</th>
+                                    <th data-key="table-total">Total</th>
+                                    <th data-key="table-actions">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                                <!-- Bookings will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders-tab" class="tab-content">
+                    <h2 data-key="orders">Food Orders</h2>
+                    <div class="data-controls">
+                        <div class="filter-controls">
+                            <select id="order-filter">
+                                <option value="all" data-key="all-orders">All Orders</option>
+                                <option value="pending" data-key="pending">Pending</option>
+                                <option value="completed" data-key="completed">Completed</option>
+                                <option value="today" data-key="today">Today</option>
+                            </select>
+                        </div>
+                        <button id="refresh-orders" class="refresh-btn" data-key="refresh">Refresh</button>
+                    </div>
+                    <div class="data-table">
+                        <table id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th data-key="table-order-id">Order ID</th>
+                                    <th data-key="table-time">Time</th>
+                                    <th data-key="table-customer">Customer</th>
+                                    <th data-key="table-room">Room</th>
+                                    <th data-key="table-items">Items</th>
+                                    <th data-key="table-total">Total</th>
+                                    <th data-key="table-status">Status</th>
+                                    <th data-key="table-actions">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody">
+                                <!-- Orders will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Availability Tab -->
+                <div id="availability-tab" class="tab-content">
+                    <h2 data-key="manage-availability">Manage Room Availability</h2>
+                    <div class="availability-controls">
+                        <div class="status-legend">
+                            <div class="legend-item">
+                                <div class="status-indicator available"></div>
+                                <span data-key="available">Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="status-indicator occupied"></div>
+                                <span data-key="occupied">Occupied</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="status-indicator maintenance"></div>
+                                <span data-key="maintenance">Maintenance</span>
+                            </div>
+                        </div>
+                        <button id="refresh-availability" class="refresh-btn" data-key="refresh">Refresh</button>
+                    </div>
+                    
+                    <div class="availability-management">
+                        <div class="room-section">
+                            <h3 data-key="gaming-rooms">Gaming Rooms</h3>
+                            <div class="rooms-grid" id="admin-gaming-rooms">
+                                <!-- Gaming rooms will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="room-section">
+                            <h3 data-key="vr-rooms">VR Racing Rooms</h3>
+                            <div class="rooms-grid" id="admin-vr-rooms">
+                                <!-- VR rooms will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="room-section">
+                            <h3 data-key="billiard-rooms">Billiard Rooms</h3>
+                            <div class="rooms-grid" id="admin-billiard-rooms">
+                                <!-- Billiard rooms will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Status Change Modal -->
+    <div id="status-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="status-change-content">
+                <h3 data-key="change-status">Change Room Status</h3>
+                <div class="room-info">
+                    <p><strong data-key="room">Room:</strong> <span id="status-room-name"></span></p>
+                    <p><strong data-key="current-status">Current Status:</strong> <span id="status-current"></span></p>
+                </div>
+                <form id="status-form">
+                    <div class="form-group">
+                        <label for="new-status" data-key="new-status">New Status *</label>
+                        <select id="new-status" required>
+                            <option value="available" data-key="available">Available</option>
+                            <option value="occupied" data-key="occupied">Occupied</option>
+                            <option value="maintenance" data-key="maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status-notes" data-key="notes">Notes</label>
+                        <textarea id="status-notes" rows="3" placeholder="Optional notes..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-key="update-status">Update Status</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

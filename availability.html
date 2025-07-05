@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability - Harley Gaming Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switch">
+        <button id="lang-toggle" class="lang-btn">عربي</button>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HARLEY</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav-home">Home</a></li>
+                <li><a href="services.html" data-key="nav-services">Services</a></li>
+                <li><a href="book.html" data-key="nav-book">Book</a></li>
+                <li><a href="orders.html" data-key="nav-orders">Orders</a></li>
+                <li><a href="availability.html" data-key="nav-availability" class="active">Availability</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="availability-header">
+                <h1 class="page-title" data-key="availability-title">Real-Time Availability</h1>
+                <div class="last-updated">
+                    <span data-key="last-updated">Last Updated:</span>
+                    <span id="last-update-time">--</span>
+                    <button id="refresh-availability" class="refresh-btn" data-key="refresh">Refresh</button>
+                </div>
+            </div>
+            
+            <div class="availability-legend">
+                <div class="legend-item">
+                    <div class="status-indicator available"></div>
+                    <span data-key="available">Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="status-indicator occupied"></div>
+                    <span data-key="occupied">Occupied</span>
+                </div>
+                <div class="legend-item">
+                    <div class="status-indicator maintenance"></div>
+                    <span data-key="maintenance">Maintenance</span>
+                </div>
+            </div>
+
+            <div class="availability-sections">
+                <div class="section">
+                    <h2 class="section-title" data-key="gaming-rooms">Gaming Rooms</h2>
+                    <div class="rooms-grid" id="gaming-rooms">
+                        <!-- Gaming rooms will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-key="vr-rooms">VR Racing Rooms</h2>
+                    <div class="rooms-grid" id="vr-rooms">
+                        <!-- VR rooms will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-key="billiard-rooms">Billiard Rooms</h2>
+                    <div class="rooms-grid" id="billiard-rooms">
+                        <!-- Billiard rooms will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="availability-summary">
+                <h3 data-key="summary-title">Summary</h3>
+                <div class="summary-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-rooms">0</div>
+                        <div class="stat-label" data-key="total-rooms">Total Rooms</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="available-rooms">0</div>
+                        <div class="stat-label" data-key="available-rooms">Available</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="occupied-rooms">0</div>
+                        <div class="stat-label" data-key="occupied-rooms">Occupied</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="maintenance-rooms">0</div>
+                        <div class="stat-label" data-key="maintenance-rooms">Maintenance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3 data-key="quick-actions">Quick Actions</h3>
+                <div class="action-buttons">
+                    <a href="book.html" class="action-btn primary" data-key="book-now">Book Now</a>
+                    <a href="orders.html" class="action-btn secondary" data-key="order-food">Order Food</a>
+                    <button id="notify-available" class="action-btn tertiary" data-key="notify-available">Notify When Available</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Modal -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="notification-content">
+                <h3 data-key="notification-title">Availability Notification</h3>
+                <p data-key="notification-desc">Get notified when a room becomes available</p>
+                <form id="notification-form">
+                    <div class="form-group">
+                        <label for="notification-name" data-key="label-name">Name *</label>
+                        <input type="text" id="notification-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notification-phone" data-key="label-phone">Phone *</label>
+                        <input type="tel" id="notification-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notification-room-type" data-key="label-room-type">Room Type *</label>
+                        <select id="notification-room-type" required>
+                            <option value="" data-key="select-room">Select Room Type</option>
+                            <option value="gaming" data-key="gaming-room">Gaming Room</option>
+                            <option value="vr" data-key="vr-room">VR Racing Room</option>
+                            <option value="billiard" data-key="billiard-room">Billiard Room</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn" data-key="set-notification">Set Notification</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HARLEY</h3>
+                    <p data-key="footer-desc">The ultimate gaming experience in Upper Egypt</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-contact">Contact</h4>
+                    <p>Phone: +20 123 456 7890</p>
+                    <p>Email: info@harleygaming.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-hours">Hours</h4>
+                    <p data-key="footer-hours-text">Daily: 10:00 AM - 2:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/availability.js"></script>
+</body>
+</html>

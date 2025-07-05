@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Harley Gaming Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switch">
+        <button id="lang-toggle" class="lang-btn">عربي</button>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HARLEY</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav-home">Home</a></li>
+                <li><a href="services.html" data-key="nav-services" class="active">Services</a></li>
+                <li><a href="book.html" data-key="nav-book">Book</a></li>
+                <li><a href="orders.html" data-key="nav-orders">Orders</a></li>
+                <li><a href="availability.html" data-key="nav-availability">Availability</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title" data-key="services-title">Our Services</h1>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="gaming">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/g12f56dc697551a2abfe11355c93dee3bed846d96462cbe42fd10ba705b9c0bede69d96bf5f12f78712bb8743987dd63013c2f428c809bb1c031eb13e546ba6f3_1280.jpg" alt="Gaming Setup">
+                        <div class="service-overlay">
+                            <button class="service-btn" data-key="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-key="service-gaming-title">Private Gaming Rooms</h3>
+                        <p data-key="service-gaming-desc">Experience gaming like never before in our premium private rooms equipped with the latest gaming hardware.</p>
+                        <div class="service-features">
+                            <span class="feature-tag" data-key="feature-pc">High-End PCs</span>
+                            <span class="feature-tag" data-key="feature-console">Console Gaming</span>
+                            <span class="feature-tag" data-key="feature-comfort">Comfortable Seating</span>
+                        </div>
+                        <div class="service-pricing">
+                            <span class="price" data-key="price-gaming">50 EGP/hour</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="vr">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/g3658c6307c81d0a84d433f633a3615be0943bf9776e75285893f686ee8a40c369f09e9edc1f1440a8937d5d7ad79c5e7a3a3f70d6c3dcf26b5b330f42d72b744_1280.jpg" alt="VR Gaming">
+                        <div class="service-overlay">
+                            <button class="service-btn" data-key="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-key="service-vr-title">VR Racing Simulation</h3>
+                        <p data-key="service-vr-desc">Immerse yourself in high-speed racing with our state-of-the-art VR racing simulators.</p>
+                        <div class="service-features">
+                            <span class="feature-tag" data-key="feature-vr-headset">VR Headsets</span>
+                            <span class="feature-tag" data-key="feature-racing-wheel">Racing Wheels</span>
+                            <span class="feature-tag" data-key="feature-multiplayer">Multiplayer</span>
+                        </div>
+                        <div class="service-pricing">
+                            <span class="price" data-key="price-vr">75 EGP/hour</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="billiard">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/ga3afe8a4f676468c3f8c076c3f7e97b1bb34ab2d9f776d99bfe4edfc124e7f73b15640a2926a7d07dc373cd7a90c94f999e7acd7d3a939e33c18b07a5f264fb9_1280.jpg" alt="Billiard Table">
+                        <div class="service-overlay">
+                            <button class="service-btn" data-key="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-key="service-billiard-title">Billiardo</h3>
+                        <p data-key="service-billiard-desc">Professional billiard tables for competitive play and casual enjoyment with friends.</p>
+                        <div class="service-features">
+                            <span class="feature-tag" data-key="feature-pro-tables">Professional Tables</span>
+                            <span class="feature-tag" data-key="feature-equipment">Quality Equipment</span>
+                            <span class="feature-tag" data-key="feature-lighting">Perfect Lighting</span>
+                        </div>
+                        <div class="service-pricing">
+                            <span class="price" data-key="price-billiard">40 EGP/hour</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="food">
+                    <div class="service-image">
+                        <img src="https://pixabay.com/get/g2c42ea8ea7bb843dd867d3bcb7c7566d9c988f631fd6d596da30b99bacbd8663cd9ffc2e1d6436052bd71aeba43663edc801527a4e8d25c89955b10e4cb9c097_1280.jpg" alt="Food and Drinks">
+                        <div class="service-overlay">
+                            <button class="service-btn" data-key="view-menu">View Menu</button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-key="service-food-title">Food & Drinks Menu</h3>
+                        <p data-key="service-food-desc">Delicious food and refreshing drinks delivered right to your gaming room.</p>
+                        <div class="service-features">
+                            <span class="feature-tag" data-key="feature-pizza">Pizza</span>
+                            <span class="feature-tag" data-key="feature-burgers">Burgers</span>
+                            <span class="feature-tag" data-key="feature-drinks">Drinks</span>
+                            <span class="feature-tag" data-key="feature-snacks">Snacks</span>
+                        </div>
+                        <div class="service-pricing">
+                            <span class="price" data-key="price-food">Starting from 25 EGP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Service Detail Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Food Menu Modal -->
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="menu-content">
+                <h2 data-key="menu-title">Food & Drinks Menu</h2>
+                <div class="menu-categories">
+                    <div class="menu-category">
+                        <h3 data-key="menu-pizza">Pizza</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="item-name" data-key="margherita">Margherita Pizza</span>
+                                <span class="item-price">65 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="pepperoni">Pepperoni Pizza</span>
+                                <span class="item-price">75 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="supreme">Supreme Pizza</span>
+                                <span class="item-price">85 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3 data-key="menu-burgers">Burgers</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="item-name" data-key="classic-burger">Classic Burger</span>
+                                <span class="item-price">45 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="cheese-burger">Cheese Burger</span>
+                                <span class="item-price">55 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="chicken-burger">Chicken Burger</span>
+                                <span class="item-price">50 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3 data-key="menu-drinks">Drinks</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="item-name" data-key="coca-cola">Coca Cola</span>
+                                <span class="item-price">15 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="orange-juice">Orange Juice</span>
+                                <span class="item-price">20 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="coffee">Coffee</span>
+                                <span class="item-price">25 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3 data-key="menu-snacks">Snacks</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="item-name" data-key="chips">Chips</span>
+                                <span class="item-price">12 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="nachos">Nachos</span>
+                                <span class="item-price">30 EGP</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="item-name" data-key="popcorn">Popcorn</span>
+                                <span class="item-price">18 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HARLEY</h3>
+                    <p data-key="footer-desc">The ultimate gaming experience in Upper Egypt</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-contact">Contact</h4>
+                    <p>Phone: +20 123 456 7890</p>
+                    <p>Email: info@harleygaming.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-hours">Hours</h4>
+                    <p data-key="footer-hours-text">Daily: 10:00 AM - 2:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

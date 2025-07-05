@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Room - Harley Gaming Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switch">
+        <button id="lang-toggle" class="lang-btn">عربي</button>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HARLEY</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav-home">Home</a></li>
+                <li><a href="services.html" data-key="nav-services">Services</a></li>
+                <li><a href="book.html" data-key="nav-book" class="active">Book</a></li>
+                <li><a href="orders.html" data-key="nav-orders">Orders</a></li>
+                <li><a href="availability.html" data-key="nav-availability">Availability</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title" data-key="book-title">Book a Room</h1>
+            
+            <div class="booking-container">
+                <div class="booking-form-container">
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-group">
+                            <label for="customer-name" data-key="label-name">Name *</label>
+                            <input type="text" id="customer-name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-phone" data-key="label-phone">Phone *</label>
+                            <input type="tel" id="customer-phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="room-type" data-key="label-room-type">Room Type *</label>
+                            <select id="room-type" name="roomType" required>
+                                <option value="" data-key="select-room">Select Room Type</option>
+                                <option value="gaming" data-key="gaming-room">Gaming Room</option>
+                                <option value="vr" data-key="vr-room">VR Racing Room</option>
+                                <option value="billiard" data-key="billiard-room">Billiard Room</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-date" data-key="label-date">Date *</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time" data-key="label-time">Time *</label>
+                                <input type="time" id="booking-time" name="time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duration" data-key="label-duration">Duration *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="" data-key="select-duration">Select Duration</option>
+                                <option value="1" data-key="duration-1">1 Hour</option>
+                                <option value="2" data-key="duration-2">2 Hours</option>
+                                <option value="3" data-key="duration-3">3 Hours</option>
+                                <option value="4" data-key="duration-4">4 Hours</option>
+                                <option value="5" data-key="duration-5">5 Hours</option>
+                                <option value="6" data-key="duration-6">6+ Hours</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-key="label-addons">Add-ons</label>
+                            <div class="addons-container">
+                                <div class="addon-item">
+                                    <input type="checkbox" id="addon-food" name="addons" value="food">
+                                    <label for="addon-food" data-key="addon-food">Food Package (+50 EGP)</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="addon-drinks" name="addons" value="drinks">
+                                    <label for="addon-drinks" data-key="addon-drinks">Drinks Package (+30 EGP)</label>
+                                </div>
+                                <div class="addon-item">
+                                    <input type="checkbox" id="addon-extended" name="addons" value="extended">
+                                    <label for="addon-extended" data-key="addon-extended">Extended Hours (+20 EGP/hour)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes" data-key="label-notes">Special Notes</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or notes..."></textarea>
+                        </div>
+
+                        <div class="price-summary">
+                            <h3 data-key="price-summary">Price Summary</h3>
+                            <div class="price-breakdown">
+                                <div class="price-item">
+                                    <span data-key="base-price">Base Price:</span>
+                                    <span id="base-price">0 EGP</span>
+                                </div>
+                                <div class="price-item">
+                                    <span data-key="addons-price">Add-ons:</span>
+                                    <span id="addons-price">0 EGP</span>
+                                </div>
+                                <div class="price-item total">
+                                    <span data-key="total-price">Total:</span>
+                                    <span id="total-price">0 EGP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" data-key="confirm-booking">Confirm Booking</button>
+                    </form>
+                </div>
+
+                <div class="booking-info">
+                    <h3 data-key="booking-info-title">Booking Information</h3>
+                    <div class="info-section">
+                        <h4 data-key="pricing-title">Pricing</h4>
+                        <ul class="pricing-list">
+                            <li data-key="gaming-price">Gaming Room: 50 EGP/hour</li>
+                            <li data-key="vr-price">VR Racing: 75 EGP/hour</li>
+                            <li data-key="billiard-price">Billiard: 40 EGP/hour</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h4 data-key="policies-title">Policies</h4>
+                        <ul class="policies-list">
+                            <li data-key="policy-advance">Advance booking required</li>
+                            <li data-key="policy-cancellation">Free cancellation 2 hours before</li>
+                            <li data-key="policy-payment">Payment upon arrival</li>
+                            <li data-key="policy-id">Valid ID required</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h4 data-key="contact-title">Contact</h4>
+                        <p>Phone: +20 123 456 7890</p>
+                        <p>WhatsApp: +20 123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="confirmation-content">
+                <div class="success-icon">✓</div>
+                <h2 data-key="booking-confirmed">Booking Confirmed!</h2>
+                <p data-key="booking-success-message">Your booking has been successfully submitted. You will receive a confirmation call within 30 minutes.</p>
+                <div class="booking-details">
+                    <h3 data-key="booking-details-title">Booking Details</h3>
+                    <div id="booking-summary">
+                        <!-- Dynamic booking details will be inserted here -->
+                    </div>
+                </div>
+                <button id="close-confirmation" class="submit-btn" data-key="close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HARLEY</h3>
+                    <p data-key="footer-desc">The ultimate gaming experience in Upper Egypt</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-contact">Contact</h4>
+                    <p>Phone: +20 123 456 7890</p>
+                    <p>Email: info@harleygaming.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer-hours">Hours</h4>
+                    <p data-key="footer-hours-text">Daily: 10:00 AM - 2:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/booking.js"></script>
+</body>
+</html>
