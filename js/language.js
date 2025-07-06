@@ -26,9 +26,9 @@ class LanguageManager {
                 'feature-gaming': 'Premium Gaming',
                 'feature-gaming-desc': 'Latest gaming hardware and comfortable private rooms',
                 'feature-vr': 'VR Racing',
-                'feature-vr-desc': 'Immersive VR racing simulation experience',
-                'feature-billiard': 'Billiardo',
-                'feature-billiard-desc': 'Professional billiard tables for competitive play',
+                'feature-vr-desc': 'Immersive racing simulation experience',
+                'feature-billiard': 'Billiards',
+                'feature-billiard-desc': 'Professional billiards tables for competitive play',
                 'feature-food': 'Food & Drinks',
                 'feature-food-desc': 'Delicious food and refreshing drinks delivered to your room',
                 
@@ -40,7 +40,7 @@ class LanguageManager {
                 'service-gaming-desc': 'Experience gaming like never before in our premium private rooms equipped with the latest gaming hardware.',
                 'service-vr-title': 'VR Racing Simulation',
                 'service-vr-desc': 'Immerse yourself in high-speed racing with our state-of-the-art VR racing simulators.',
-                'service-billiard-title': 'Billiardo',
+                'service-billiard-title': 'Billiards',
                 'service-billiard-desc': 'Professional billiard tables for competitive play and casual enjoyment with friends.',
                 'service-food-title': 'Food & Drinks Menu',
                 'service-food-desc': 'Delicious food and refreshing drinks delivered right to your gaming room.',
@@ -223,8 +223,8 @@ class LanguageManager {
                 // Visit Us Section
                 'visit-us': 'Visit Us Now',
                 'location-title': 'Find Us Here',
-                'location-desc': 'Located in the heart of Upper Egypt, we\'re easy to find and always ready to welcome you to the ultimate gaming experience.',
-                'address': 'Upper Egypt, Gaming District',
+                'location-desc': 'Located in the heart of New Minia, we\'re easy to find and always ready to welcome you to the ultimate gaming experience.',
+                'address': 'New Minia, Up Town',
                 'hours': 'Daily: 10:00 AM - 2:00 AM',
                 
                 // Footer
@@ -244,28 +244,28 @@ class LanguageManager {
                 // Hero Section
                 'hero-title': 'أفضل مقهى ألعاب في صعيد مصر',
                 'race': 'سباق',
-                'chill': 'استرخاء',
+                'chill': 'روقان',
                 'game': 'لعب',
                 'compete': 'تنافس',
-                'book-now': 'احجز الآن',
-                'order-food': 'اطلب طعام',
-                'check-availability': 'تحقق من التوفر',
+                'book-now': 'احجز دلوقتي',
+                'order-food': 'تاكل حاجة ؟',
+                'check-availability': 'شوف المتاح',
                 
                 // Features
-                'why-choose': 'لماذا تختار هارلي؟',
+                'why-choose': 'ليه تختار هارلي؟',
                 'feature-gaming': 'ألعاب متميزة',
-                'feature-gaming-desc': 'أحدث معدات الألعاب وغرف خاصة مريحة',
-                'feature-vr': 'سباق الواقع الافتراضي',
-                'feature-vr-desc': 'تجربة محاكاة سباق غامرة بالواقع الافتراضي',
+                'feature-gaming-desc': 'أحدث أجهزة وروم ليك لوحدك تنسلى الدنيا بيها',
+                'feature-vr': 'محاكي السباقات',
+                'feature-vr-desc': 'بدل ما تتفرج على سباقات جرب بنفسك التجربة وعيش جوا الشاشة',
                 'feature-billiard': 'بلياردو',
-                'feature-billiard-desc': 'طاولات بلياردو احترافية للعب التنافسي',
-                'feature-food': 'طعام ومشروبات',
-                'feature-food-desc': 'طعام لذيذ ومشروبات منعشة تُوصل إلى غرفتك',
+                'feature-billiard-desc': 'الترابيزة قدامك والعصاية في ايدك وورينا احلى لاست عكس في الدنيا',
+                'feature-food': 'الأكل والشرب',
+                'feature-food-desc': 'مفيش قعدة تحلى منغير لقمة حلوة واحنا هنجيبلك اللي انت عايزه لحد عندك',
                 
                 // Services
                 'services-title': 'خدماتنا',
-                'learn-more': 'اعرف المزيد',
-                'view-menu': 'عرض القائمة',
+                'learn-more': 'اعرف اكتر',
+                'view-menu': 'شوف القائمة',
                 'service-gaming-title': 'غرف الألعاب الخاصة',
                 'service-gaming-desc': 'اختبر الألعاب كما لم تفعل من قبل في غرفنا الخاصة المتميزة المجهزة بأحدث معدات الألعاب.',
                 'service-vr-title': 'محاكاة سباق الواقع الافتراضي',
@@ -451,10 +451,10 @@ class LanguageManager {
                 'update-status': 'تحديث الحالة',
                 
                 // Visit Us Section
-                'visit-us': 'زورونا الآن',
-                'location-title': 'ابحث عنا هنا',
-                'location-desc': 'نقع في قلب صعيد مصر، من السهل العثور علينا ونحن دائماً مستعدون لاستقبالكم لتجربة الألعاب المثلى.',
-                'address': 'صعيد مصر، منطقة الألعاب',
+                'visit-us': 'نورنا دلوقتي',
+                'location-title': 'هتلاقينا هنا',
+                'location-desc': 'في قلب المنيا الجديدة في أب تاون هتلاقينا مستنيينك علطول عشان تبقى احلى تجربة جيمينج عديت بيها في حياتك.',
+                'address': 'المنيا الجديدة، أب تاون',
                 'hours': 'يومياً: 10:00 ص - 2:00 ص',
                 
                 // Footer
