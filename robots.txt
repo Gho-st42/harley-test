@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://harley-gaming-cafe.vercel.app/sitemap.xml
