@@ -18,7 +18,6 @@ class BookingManager {
         const form = document.getElementById('booking-form');
         const roomTypeSelect = document.getElementById('room-type');
         const durationSelect = document.getElementById('duration');
-        const addonCheckboxes = document.querySelectorAll('input[name="addons"]');
         const confirmationModal = document.getElementById('confirmation-modal');
         const closeConfirmationBtn = document.getElementById('close-confirmation');
 
@@ -33,10 +32,6 @@ class BookingManager {
         if (durationSelect) {
             durationSelect.addEventListener('change', () => this.updatePricing());
         }
-
-        addonCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => this.updatePricing());
-        });
 
         if (closeConfirmationBtn) {
             closeConfirmationBtn.addEventListener('click', () => {
@@ -106,20 +101,12 @@ class BookingManager {
             time: formData.get('time'),
             duration: parseInt(formData.get('duration')),
             notes: formData.get('notes') || '',
-            addons: [],
             timestamp: new Date().toISOString()
         };
 
-        // Collect addons
-        const addonCheckboxes = document.querySelectorAll('input[name="addons"]:checked');
-        addonCheckboxes.forEach(checkbox => {
-            data.addons.push(checkbox.value);
-        });
-
         // Calculate pricing
-        const pricing = this.priceCalculator.calculateTotal(data.roomType, data.duration, data.addons);
+        const pricing = this.priceCalculator.calculateTotal(data.roomType, data.duration);
         data.basePrice = pricing.basePrice;
-        data.addonsPrice = pricing.addonsPrice;
         data.totalPrice = pricing.total;
 
         return data;
@@ -178,14 +165,11 @@ class BookingManager {
     updatePricing() {
         const roomType = document.getElementById('room-type').value;
         const duration = parseInt(document.getElementById('duration').value) || 0;
-        const addonCheckboxes = document.querySelectorAll('input[name="addons"]:checked');
-        const addons = Array.from(addonCheckboxes).map(cb => cb.value);
 
-        const pricing = this.priceCalculator.calculateTotal(roomType, duration, addons);
+        const pricing = this.priceCalculator.calculateTotal(roomType, duration);
 
         // Update price display
         document.getElementById('base-price').textContent = `${pricing.basePrice} EGP`;
-        document.getElementById('addons-price').textContent = `${pricing.addonsPrice} EGP`;
         document.getElementById('total-price').textContent = `${pricing.total} EGP`;
 
         // Update submit button state
@@ -203,18 +187,9 @@ class BookingManager {
 
         const roomTypes = {
             'gaming': 'Gaming Room',
-            'vr': 'VR Racing Room',
-            'billiard': 'Billiard Room'
+            'racing': 'Racing Simulator',
+            'billiard': 'Billiard Table'
         };
-
-        const addonsText = booking.addons.length > 0 ? booking.addons.map(addon => {
-            const addonNames = {
-                'food': 'Food Package',
-                'drinks': 'Drinks Package',
-                'extended': 'Extended Hours'
-            };
-            return addonNames[addon] || addon;
-        }).join(', ') : 'None';
 
         bookingSummary.innerHTML = `
             <div class="booking-summary-grid">
@@ -245,10 +220,6 @@ class BookingManager {
                 <div class="summary-item">
                     <span class="label">Duration:</span>
                     <span class="value">${booking.duration} hour${booking.duration > 1 ? 's' : ''}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Add-ons:</span>
-                    <span class="value">${addonsText}</span>
                 </div>
                 <div class="summary-item">
                     <span class="label">Total Price:</span>
@@ -315,26 +286,18 @@ class BookingManager {
 class PriceCalculator {
     constructor() {
         this.basePrices = {
-            'gaming': 50,
-            'vr': 75,
-            'billiard': 40
-        };
-
-        this.addonPrices = {
-            'food': 50,
-            'drinks': 30,
-            'extended': 20 // per hour
+            'gaming': 100,
+            'racing': 150,
+            'billiard': 50
         };
     }
 
-    calculateTotal(roomType, duration, addons = []) {
+    calculateTotal(roomType, duration = []) {
         const basePrice = this.calculateBasePrice(roomType, duration);
-        const addonsPrice = this.calculateAddonsPrice(addons, duration);
         
         return {
             basePrice,
-            addonsPrice,
-            total: basePrice + addonsPrice
+            total: basePrice
         };
     }
 
@@ -342,20 +305,7 @@ class PriceCalculator {
         const hourlyRate = this.basePrices[roomType] || 0;
         return hourlyRate * duration;
     }
-
-    calculateAddonsPrice(addons, duration) {
-        let total = 0;
-        
-        addons.forEach(addon => {
-            if (addon === 'extended') {
-                total += this.addonPrices[addon] * duration;
-            } else {
-                total += this.addonPrices[addon] || 0;
-            }
-        });
-
-        return total;
-    }
+    
 }
 
 // Initialize booking manager when DOM is loaded
@@ -410,6 +360,10 @@ style.textContent = `
         }
     }
 `;
+document.head.appendChild(style);
+
+
+
 document.head.appendChild(style);
 
 export { BookingManager, PriceCalculator };
