@@ -46,10 +46,8 @@ class LanguageManager {
                 'service-food-desc': 'Delicious food and refreshing drinks delivered right to your gaming room.',
                 
                 // Features Tags
-                'feature-pc': 'High-End PCs',
                 'feature-console': 'Console Gaming',
                 'feature-comfort': 'Comfortable Seating',
-                'feature-vr-headset': 'VR Headsets',
                 'feature-racing-wheel': 'Racing Wheels',
                 'feature-multiplayer': 'Multiplayer',
                 'feature-pro-tables': 'Professional Tables',
@@ -238,7 +236,7 @@ class LanguageManager {
                 'nav-availability': 'التوفر',
                 
                 // Hero Section
-                'hero-title': 'أفضل مقهى ألعاب في صعيد مصر',
+                'hero-title': 'جيمينج كافيه رقم 1 في صعيد مصر',
                 'race': 'سباق',
                 'chill': 'روقان',
                 'game': 'لعب',

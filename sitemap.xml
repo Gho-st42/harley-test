@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://harley-gaming-cafe.vercel.app/</loc>
@@ -15,11 +13,6 @@
 <url>
   <loc>https://harley-gaming-cafe.vercel.app/index.html</loc>
   <lastmod>2025-07-06T21:01:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://harley-gaming-cafe.vercel.app/services.html</loc>
-  <lastmod>2025-07-06T21:01:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>

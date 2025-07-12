@@ -4,7 +4,7 @@ import { SheetsAPI } from './sheets.js';
 class AdminPanel {
     constructor() {
         this.sheetsAPI = new SheetsAPI();
-        this.isAuthenticated = false;
+        this.isAuthenticated = true;
         this.currentTab = 'dashboard';
         this.bookingsData = [];
         this.ordersData = [];
